@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 
-from app.models.db import db, environment, SCHEMA
+from app.models.db import db, environment
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -15,8 +15,8 @@ def seed():
         # Before seeding in production, we want to run the seed undo 
         # command, which will  truncate all tables prefixed with 
         # the schema name.
-        # Make sure to add all your other undo functions to the undo 
-        # function defined below
+        # Make sure to add all your other models undo functions to the 
+        # undo function defined below
         undo()
     seed_users()
     # Add other seed functions here
