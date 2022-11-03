@@ -15,8 +15,9 @@ def seed():
         # Before seeding in production, we want to run the seed undo 
         # command, which will  truncate all tables prefixed with 
         # the schema name.
-        # Make sure to add all your other models undo functions below
-        undo_users()
+        # Make sure to add all your other models undo functions 
+        # below to the seed undo function
+        undo()
     seed_users()
     # Add other seed functions here
 
