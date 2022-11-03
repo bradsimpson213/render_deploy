@@ -14,9 +14,10 @@ def seed():
     if environment == 'production':
         # Before seeding in production, we want to run the seed undo 
         # command, which will  truncate all tables prefixed with 
-        # schema name
-        # Add the undo function for each table that will be seeded.
-        undo_users()
+        # the schema name.
+        # Make sure to add all your other undo functions to the undo 
+        # function defined below
+        undo()
     seed_users()
     # Add other seed functions here
 
